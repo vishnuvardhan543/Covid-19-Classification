@@ -1,12 +1,13 @@
+// ResultDisplay.js
 import React from 'react';
 
-function ResultDisplay({ result }) {
+const ResultDisplay = ({ classification }) => {
     return (
-        <div className="result-display">
+        <div>
             <h3>Classification Result:</h3>
-            <p>{result}</p>
+            {classification ? <p>{classification}</p> : <p>No classification available</p>}
         </div>
     );
-}
+};
 
 export default ResultDisplay;

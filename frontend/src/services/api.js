@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';  // Update this if your backend URL is different
+const API_URL = 'http://127.0.0.1:5000';  // Change the port to 5000 if Flask is running there
 
 export const classifyText = async (text) => {
     try {
