@@ -1,0 +1,66 @@
+.text-classifier {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.text-classifier:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.classify-button {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.classify-button:hover:not(:disabled) {
+    background-color: #1e88e5;
+    transform: translateY(-2px);
+}
+
+.classify-button:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #f44336;
+    margin-top: 1rem;
+    font-weight: 500;
+}
