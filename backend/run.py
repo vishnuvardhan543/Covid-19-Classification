@@ -1,6 +1,13 @@
-from backend import create_app
+from flask import Flask
+from flask_cors import CORS
+from .main import main
 
-app = create_app()
+def create_app():
+    app = Flask(__name__)
+    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+    app.register_blueprint(main)
+    return app
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app = create_app()
+    app.run(debug=True, host='0.0.0.0', port=5000)

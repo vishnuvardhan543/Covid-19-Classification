@@ -1,61 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 :root {
-  --primary-color: #4caf50;
-  --primary-dark: #45a049;
-  --secondary-color: #2196f3;
-  --background-color: #e8f5e9;
+  --primary-color: #4a90e2;
+  --secondary-color: #9b59b6;
+  --accent-color: #2ecc71;
+  --background-color: #f0f4f8;
   --text-color: #333333;
   --light-text: #ffffff;
+  --error-color: #e74c3c;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   color: var(--text-color);
+  line-height: 1.6;
 }
 
-.App {
-  text-align: center;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: var(--primary-color);
-  padding: 2rem;
-  color: var(--light-text);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2, #80deea, #4dd0e1);
+  z-index: -1;
+  animation: gradientAnimation 15s ease infinite;
 }
 
-.App-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  font-weight: 600;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.App-header p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 300;
-  opacity: 0.9;
-}
-
-.App-main {
-  flex-grow: 1;
+.main-content {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
 }
 
-.App-footer {
-  background-color: var(--primary-dark);
-  color: var(--light-text);
-  padding: 1rem;
-  font-size: 0.9rem;
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
 }
+
