@@ -13,12 +13,14 @@ const ResultDisplay = ({ classification }) => {
     return (
         <div className="result-display">
             <h3>Classification Result</h3>
-            <div className="result-content">
+            <div className={`result-content ${getConfidenceColor(classification.confidence)}`}>
                 <div className="classification-box">
                     <p className="classification">{classification.classification}</p>
-                    <p className={`confidence ${getConfidenceColor(classification.confidence)}`}>
-                        Confidence: {(classification.confidence * 100).toFixed(2)}%
-                    </p>
+                    {!isNaN(classification.confidence) && (
+                        <p className="confidence">
+                            Confidence: {(classification.confidence * 100).toFixed(2)}%
+                        </p>
+                    )}
                 </div>
             </div>
         </div>

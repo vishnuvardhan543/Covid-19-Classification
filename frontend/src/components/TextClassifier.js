@@ -30,15 +30,31 @@ const TextClassifier = () => {
                 <textarea
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
-                    placeholder="Enter text related to COVID-19 to classify..."
+                    placeholder="Type symptoms or a description for classification..."
                     rows={5}
                     className="input-textarea"
+                    aria-label="Enter symptoms or description"
                 />
-                <button onClick={handleClassify} disabled={isLoading || !inputText.trim()} className="classify-button">
-                    {isLoading ? 'Analyzing...' : 'Classify Text'}
+                <button 
+                    onClick={handleClassify} 
+                    disabled={isLoading || !inputText.trim()} 
+                    className={`classify-button ${isLoading ? 'loading' : ''}`}
+                >
+                    {isLoading ? 'Classifying...' : 'Classify Text'}
                 </button>
             </div>
-            {error && <p className="error-message">{error}</p>}
+            {isLoading && (
+                <div className="loading-animation">
+                    <div className="spinner"></div>
+                    <p>Analyzing your input...</p>
+                </div>
+            )}
+            {error && (
+                <div className="error-message">
+                    <p>{error}</p>
+                    <button onClick={() => setError('')}>Try Again</button>
+                </div>
+            )}
             <ResultDisplay classification={classification} />
         </div>
     );

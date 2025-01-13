@@ -1,22 +1,21 @@
 import React from 'react';
-import './App.css';
+import Header from './components/Header';
 import TextClassifier from './components/TextClassifier';
+import Footer from './components/Footer';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>COVID-19 Text Classification</h1>
-        <p>Analyze text related to COVID-19 for instant, AI-powered insights</p>
-      </header>
-      <main className="App-main">
+    <div className="app">
+      <div className="background-gradient"></div>
+      <Header />
+      <main className="main-content">
         <TextClassifier />
       </main>
-      <footer className="App-footer">
-        <p>&copy; 2024 COVID-19 Text Classification Project | Stay Safe, Stay Informed</p>
-      </footer>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
+

@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:5000';  // Change the port to 5000 if Flask is running there
+const API_URL = 'http://127.0.0.1:5000';
 
 export const classifyText = async (text) => {
     try {
