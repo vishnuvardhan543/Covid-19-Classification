@@ -16,11 +16,11 @@ const ResultDisplay = ({ classification }) => {
             <div className={`result-content ${getConfidenceColor(classification.confidence)}`}>
                 <div className="classification-box">
                     <p className="classification">{classification.classification}</p>
-                    {!isNaN(classification.confidence) && (
+                    {/* {!isNaN(classification.confidence) && (
                         <p className="confidence">
                             Confidence: {(classification.confidence * 100).toFixed(2)}%
                         </p>
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>
